@@ -1,0 +1,83 @@
+--SQL Exercise 4
+--7-12 EmpDept query
+
+SELECT *
+FROM DEPT
+WHERE DEPTNO NOT IN (
+    SELECT DISTINCT DEPTNO
+    FROM EMP
+    );
+
+
+
+SELECT *
+FROM EMP
+WHERE JOB = (
+    SELECT JOB
+    FROM EMP
+    WHERE ENAME = 'JONES'
+    );
+
+
+
+SELECT *
+FROM EMP
+WHERE DEPTNO = 30 AND SAL > (
+    SELECT AVG(SAL)
+    FROM EMP
+    WHERE DEPTNO = 30
+    );
+
+
+
+SELECT *
+FROM EMP
+WHERE SAL > (
+    SELECT MAX(SAL)
+    FROM EMP
+    WHERE DEPTNO = 30
+    );
+
+
+
+SELECT *
+FROM EMP
+WHERE DEPTNO = 10 AND JOB NOT IN (
+    SELECT JOB
+    FROM EMP
+    WHERE DEPTNO = 30
+    );
+
+
+
+SELECT EMPNO, ENAME, JOB, SAL
+FROM EMP
+WHERE SAL = (
+    Select MAX(SAL)
+    FROM EMP
+    );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
