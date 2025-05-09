@@ -24,7 +24,7 @@ create table locations (
     Foreign Key (country_id) References countries(country_id)
 );
 
-
+ d
 
 
 
